@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zweirad Brenztal – Fahrradladen in Heidenheim an der Brenz</title>
+<meta name="description" content="Ihr Fahrradladen in Heidenheim an der Brenz: Verkauf, Reparatur, E-Bike-Service und Zubehör – persönliche Beratung von Ihrem Meisterbetrieb vor Ort." />
+<meta name="theme-color" content="#0E4F49" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Startseite">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name" id="brand-name">Zweirad Brenztal</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li id="nav-team-item" hidden><a href="#team">Team</a></li>
+        <li id="nav-reviews-item" hidden><a href="#bewertungen">Bewertungen</a></li>
+        <li><a href="#kontakt">Kontakt &amp; Öffnungszeiten</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="phone-link" id="header-phone" href="tel:">
+        <span class="icon" data-icon="phone" aria-hidden="true"></span>
+        <span id="header-phone-text"></span>
+      </a>
+      <a class="btn btn-accent" href="#kontakt">Termin vereinbaren</a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">
+        <span class="icon" data-icon="menu" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow" id="hero-eyebrow"></p>
+        <h1 id="hero-title"></h1>
+        <p class="hero-subtitle" id="hero-subtitle"></p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg" id="hero-cta-primary" href="#kontakt">Termin vereinbaren</a>
+          <a class="btn btn-outline btn-lg" id="hero-cta-secondary" href="#leistungen">Leistungen ansehen</a>
+        </div>
+        <ul class="hero-badges" id="hero-badges"></ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-art-circle"></div>
+        <div class="hero-art-bike">
+          <span class="icon" data-icon="bike"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= USPs ============================= -->
+  <section class="usps" aria-label="Warum bei uns">
+    <div class="container usps-grid" id="usps-grid"></div>
+  </section>
+
+  <!-- ============================= LEISTUNGEN ============================= -->
+  <section class="section" id="leistungen">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Unser Angebot</p>
+        <h2>Leistungen für Ihr Fahrrad</h2>
+        <p class="section-lead">Von der Erstberatung bis zum fertig eingestellten Rad – alles aus einer Hand.</p>
+      </div>
+      <div class="services-grid" id="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================= ÜBER UNS ============================= -->
+  <section class="section section-alt" id="ueber-uns">
+    <div class="container about-inner">
+      <div class="about-art" aria-hidden="true">
+        <div class="about-art-shape"></div>
+        <span class="icon about-art-icon" data-icon="wrench"></span>
+      </div>
+      <div class="about-copy">
+        <p class="section-kicker">Über uns</p>
+        <h2 id="about-title"></h2>
+        <p id="about-text"></p>
+        <dl class="stats" id="about-stats"></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= TEAM ============================= -->
+  <section class="section" id="team" hidden>
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Unser Team</p>
+        <h2>Die Menschen hinter Ihrem Fahrrad</h2>
+      </div>
+      <div class="team-grid" id="team-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================= BEWERTUNGEN ============================= -->
+  <section class="section section-alt" id="bewertungen" hidden>
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Kundenstimmen</p>
+        <h2>Was unsere Kund:innen sagen</h2>
+      </div>
+      <div class="testimonial-grid" id="testimonial-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================= CTA BANNER ============================= -->
+  <section class="cta-banner">
+    <div class="container cta-banner-inner">
+      <h2>Bereit für Ihre nächste Fahrt?</h2>
+      <p>Vereinbaren Sie jetzt einen Termin für Beratung, Kauf oder Werkstatt – wir freuen uns auf Sie.</p>
+      <a class="btn btn-accent btn-lg" href="#kontakt">Termin vereinbaren</a>
+    </div>
+  </section>
+
+  <!-- ============================= KONTAKT ============================= -->
+  <section class="section" id="kontakt">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Kontakt</p>
+        <h2>Besuchen Sie uns in Heidenheim</h2>
+        <p class="section-lead">Vorbeikommen, anrufen oder schreiben – wie es Ihnen am liebsten ist.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <ul class="info-list">
+            <li>
+              <span class="icon" data-icon="mapPin" aria-hidden="true"></span>
+              <div>
+                <strong id="contact-address-line1"></strong>
+                <span id="contact-address-line2"></span>
+              </div>
+            </li>
+            <li>
+              <span class="icon" data-icon="phone" aria-hidden="true"></span>
+              <div>
+                <a id="contact-phone" href="tel:"></a>
+              </div>
+            </li>
+            <li>
+              <span class="icon" data-icon="mail" aria-hidden="true"></span>
+              <div>
+                <a id="contact-email" href="mailto:"></a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="opening-hours-card">
+            <div class="opening-hours-status" id="opening-status">
+              <span class="status-dot" id="status-dot" aria-hidden="true"></span>
+              <span id="status-text"></span>
+            </div>
+            <h3>Öffnungszeiten</h3>
+            <table class="hours-table" id="hours-table">
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="social-links" id="social-links"></div>
+        </div>
+
+        <div class="contact-map-wrap">
+          <iframe
+            id="contact-map"
+            class="contact-map"
+            title="Standort auf der Karte"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <h3>Kurz Kontakt aufnehmen</h3>
+            <div class="form-row">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="cf-email">E-Mail</label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="cf-message">Nachricht</label>
+              <textarea id="cf-message" name="message" rows="4" required></textarea>
+            </div>
+            <p class="form-hint" id="form-hint" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn btn-accent">Nachricht senden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-name" id="footer-brand-name"></span>
+      <p id="footer-claim"></p>
+      <div class="social-links" id="footer-social-links"></div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul id="footer-contact"></ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a id="footer-impressum" href="#">Impressum</a></li>
+        <li><a id="footer-datenschutz" href="#">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; <span id="footer-year"></span> <span id="footer-year-brand"></span>. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
