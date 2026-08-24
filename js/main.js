@@ -285,13 +285,27 @@
 
   // -------------------------------------------------------------------
   // Karte (OpenStreetMap-Embed, kein API-Key nötig)
+  //
+  // Datenschutz: Die Karte wird bewusst NICHT beim Seitenaufruf geladen.
+  // Erst ein Klick auf "Karte laden" setzt die iframe-src und löst damit
+  // die Verbindung zu OpenStreetMap (samt IP-Übertragung) aus. So ist vor
+  // jeder Interaktion kein Drittanbieter-Request nötig (§ 25 TDDDG /
+  // Datenminimierung, Art. 5 Abs. 1 lit. c DSGVO).
   // -------------------------------------------------------------------
   const map = $("contact-map");
-  if (map && cfg.address.lat && cfg.address.lng) {
-    const { lat, lng } = cfg.address;
-    const delta = 0.01;
-    const bbox = `${lng - delta}%2C${lat - delta}%2C${lng + delta}%2C${lat + delta}`;
-    map.src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
+  const mapConsent = $("map-consent");
+  const mapLoadBtn = $("map-load-btn");
+  if (map && mapLoadBtn && cfg.address.lat && cfg.address.lng) {
+    mapLoadBtn.addEventListener("click", () => {
+      const { lat, lng } = cfg.address;
+      const delta = 0.01;
+      const bbox = `${lng - delta}%2C${lat - delta}%2C${lng + delta}%2C${lat + delta}`;
+      map.src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
+      map.hidden = false;
+      mapConsent.hidden = true;
+    });
+  } else if (mapConsent) {
+    mapConsent.hidden = true;
   }
 
   // -------------------------------------------------------------------

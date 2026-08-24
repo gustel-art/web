@@ -213,7 +213,7 @@ window.SHOP_CONFIG = {
   // Footer / rechtliches (Platzhalter-Links, bitte anpassen)
   // ---------------------------------------------------------------------
   legal: {
-    impressumHref: "#",
-    datenschutzHref: "#",
+    impressumHref: "impressum.html",
+    datenschutzHref: "datenschutz.html",
   },
 };

@@ -7,9 +7,11 @@
 <meta name="description" content="Drahteselstall: Ihr Fahrradladen in Heidenheim an der Brenz. Neu- und Gebrauchträder, E-Bikes und ehrliche Beratung – Wilhelmstraße 118/1, samstags 8-20 Uhr geöffnet." />
 <meta name="theme-color" content="#0E4F49" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<!-- Schriften werden lokal ausgeliefert (assets/fonts/), keine Anfrage an
+     fonts.googleapis.com/fonts.gstatic.com mehr -> keine Nutzer-IP-Übertragung
+     an Google beim Seitenaufruf. Siehe AUDIT-BEFUND.md, Bereich D. -->
+<link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -72,8 +74,11 @@
   </section>
 
   <!-- ============================= USPs ============================= -->
-  <section class="usps" aria-label="Warum bei uns">
-    <div class="container usps-grid" id="usps-grid"></div>
+  <section class="usps" aria-labelledby="usps-heading">
+    <div class="container">
+      <h2 id="usps-heading" class="visually-hidden">Warum Drahteselstall</h2>
+      <div class="usps-grid" id="usps-grid"></div>
+    </div>
   </section>
 
   <!-- ============================= LEISTUNGEN ============================= -->
@@ -183,12 +188,24 @@
         </div>
 
         <div class="contact-map-wrap">
+          <div class="map-consent" id="map-consent">
+            <span class="icon" data-icon="mapPin" aria-hidden="true"></span>
+            <p>
+              Beim Laden der Karte baut Ihr Browser eine Verbindung zu
+              OpenStreetMap auf; dabei wird Ihre IP-Adresse an den Anbieter
+              übertragen. Die Karte lädt daher erst nach Klick.
+            </p>
+            <button type="button" class="btn btn-outline" id="map-load-btn">
+              Karte laden &amp; Standort anzeigen
+            </button>
+          </div>
           <iframe
             id="contact-map"
             class="contact-map"
             title="Standort auf der Karte"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            referrerpolicy="strict-origin-when-cross-origin"
+            hidden>
           </iframe>
 
           <div class="call-hint" id="call-hint" hidden>

@@ -1,0 +1,21 @@
+# HTTP-Security-Header für statische Hoster mit Unterstützung für eine
+# `_headers`-Datei (z. B. Netlify, Cloudflare Pages). Bei anderem Hosting
+# (Apache/Nginx/eigener Server) siehe SECURITY-HEADERS.md für Äquivalente.
+#
+# WICHTIG: Die Content-Security-Policy ist absichtlich NUR als
+# Report-Only-Header eingetragen (siehe MASTER-PROMPT-Regel: erst
+# beobachten, dann scharf schalten). Vor dem Wechsel zu
+# `Content-Security-Policy` (ohne "-Report-Only") die `report-uri`/
+# `report-to`-Auswertung mehrere Tage laufen lassen und alle Verstöße prüfen.
+# Diese Datei entfaltet erst Wirkung, sobald sie tatsächlich deployt wird -
+# das ist beim gewählten Hoster manuell zu aktivieren.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()
+  X-Frame-Options: DENY
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Content-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; frame-src https://www.openstreetmap.org; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=63072000; includeSubDomains

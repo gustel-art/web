@@ -1,0 +1,26 @@
+/* Gemeinsame Styles für impressum.html und datenschutz.html */
+.legal-main { padding-block: var(--space-7); }
+.legal-main h1 { margin-bottom: var(--space-2); }
+.legal-main h2 { margin-top: var(--space-6); font-size: 1.25rem; }
+.legal-main h3 { margin-top: var(--space-4); font-size: 1.05rem; }
+.legal-main dl { margin: 0; }
+.legal-main dt { font-weight: 700; margin-top: var(--space-3); }
+.legal-main dd { margin: 0 0 var(--space-1); color: var(--color-text-muted); }
+.legal-main ul { list-style: disc; padding-left: 1.4em; margin: 0 0 var(--space-3); color: var(--color-text-muted); }
+.legal-main li { margin-bottom: var(--space-1); }
+.placeholder {
+  background: #FFF3CD;
+  color: #6B4A00;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+.status-box {
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-3) 0;
+  font-size: 0.92rem;
+}
+.back-link { display: inline-flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-5); font-weight: 700; }
