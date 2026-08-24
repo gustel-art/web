@@ -117,7 +117,7 @@ window.SHOP_CONFIG = {
       text: "Gutes Preis-Leistungs-Verhältnis bei Neu- und Gebrauchträdern.",
     },
     {
-      icon: "clock",
+      icon: "openSign",
       title: "Nur samstags geöffnet",
       text: "8–20 Uhr in der Wilhelmstraße – bitte Öffnungszeiten beachten.",
     },
