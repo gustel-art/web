@@ -113,7 +113,7 @@
     const item = el(
       "div",
       "usp-item",
-      `<span class="usp-icon" data-icon="${usp.icon}"></span>
+      `<span class="usp-icon usp-icon--${usp.icon}" data-icon="${usp.icon}"></span>
        <div>
          <h3>${usp.title}</h3>
          <p>${usp.text}</p>
