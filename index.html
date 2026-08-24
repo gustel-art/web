@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Zweirad Brenztal – Fahrradladen in Heidenheim an der Brenz</title>
-<meta name="description" content="Ihr Fahrradladen in Heidenheim an der Brenz: Verkauf, Reparatur, E-Bike-Service und Zubehör – persönliche Beratung von Ihrem Meisterbetrieb vor Ort." />
+<title>Drahteselstall – Fahrradladen in Heidenheim an der Brenz</title>
+<meta name="description" content="Drahteselstall: Ihr Fahrradladen in Heidenheim an der Brenz. Neu- und Gebrauchträder, E-Bikes und ehrliche Beratung – Wilhelmstraße 118/1, samstags 8-20 Uhr geöffnet." />
 <meta name="theme-color" content="#0E4F49" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +21,7 @@
   <div class="container header-inner">
     <a href="#top" class="brand" aria-label="Startseite">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name" id="brand-name">Zweirad Brenztal</span>
+      <span class="brand-name" id="brand-name">Drahteselstall</span>
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
@@ -39,7 +39,7 @@
         <span class="icon" data-icon="phone" aria-hidden="true"></span>
         <span id="header-phone-text"></span>
       </a>
-      <a class="btn btn-accent" href="#kontakt">Termin vereinbaren</a>
+      <a class="btn btn-accent" href="#kontakt">Kontakt aufnehmen</a>
       <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen">
         <span class="icon" data-icon="menu" aria-hidden="true"></span>
       </button>
@@ -57,7 +57,7 @@
         <h1 id="hero-title"></h1>
         <p class="hero-subtitle" id="hero-subtitle"></p>
         <div class="hero-actions">
-          <a class="btn btn-accent btn-lg" id="hero-cta-primary" href="#kontakt">Termin vereinbaren</a>
+          <a class="btn btn-accent btn-lg" id="hero-cta-primary" href="#kontakt">Kontakt aufnehmen</a>
           <a class="btn btn-outline btn-lg" id="hero-cta-secondary" href="#leistungen">Leistungen ansehen</a>
         </div>
         <ul class="hero-badges" id="hero-badges"></ul>
@@ -130,8 +130,8 @@
   <section class="cta-banner">
     <div class="container cta-banner-inner">
       <h2>Bereit für Ihre nächste Fahrt?</h2>
-      <p>Vereinbaren Sie jetzt einen Termin für Beratung, Kauf oder Werkstatt – wir freuen uns auf Sie.</p>
-      <a class="btn btn-accent btn-lg" href="#kontakt">Termin vereinbaren</a>
+      <p>Schauen Sie samstags vorbei oder rufen Sie an – wir beraten Sie gerne.</p>
+      <a class="btn btn-accent btn-lg" href="#kontakt">Kontakt aufnehmen</a>
     </div>
   </section>
 
@@ -141,7 +141,7 @@
       <div class="section-head">
         <p class="section-kicker">Kontakt</p>
         <h2>Besuchen Sie uns in Heidenheim</h2>
-        <p class="section-lead">Vorbeikommen, anrufen oder schreiben – wie es Ihnen am liebsten ist.</p>
+        <p class="section-lead">Samstags vorbeikommen oder anrufen – wir freuen uns auf Sie.</p>
       </div>
 
       <div class="contact-grid">
@@ -160,7 +160,7 @@
                 <a id="contact-phone" href="tel:"></a>
               </div>
             </li>
-            <li>
+            <li id="contact-email-item">
               <span class="icon" data-icon="mail" aria-hidden="true"></span>
               <div>
                 <a id="contact-email" href="mailto:"></a>
@@ -190,6 +190,15 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
+
+          <div class="call-hint" id="call-hint" hidden>
+            <span class="icon" data-icon="phone" aria-hidden="true"></span>
+            <div>
+              <h3>Am schnellsten erreichen Sie uns telefonisch</h3>
+              <p>Rufen Sie einfach an – wir beraten Sie gerne persönlich.</p>
+              <a class="btn btn-accent" id="call-hint-link" href="tel:">Jetzt anrufen</a>
+            </div>
+          </div>
 
           <form class="contact-form" id="contact-form" novalidate>
             <h3>Kurz Kontakt aufnehmen</h3>

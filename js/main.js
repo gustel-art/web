@@ -199,9 +199,14 @@
   contactPhone.textContent = cfg.contact.phoneDisplay;
   contactPhone.href = `tel:${cfg.contact.phone.replace(/\s+/g, "")}`;
 
+  const contactEmailItem = $("contact-email-item");
   const contactEmail = $("contact-email");
-  contactEmail.textContent = cfg.contact.email;
-  contactEmail.href = `mailto:${cfg.contact.email}`;
+  if (cfg.contact.email) {
+    contactEmail.textContent = cfg.contact.email;
+    contactEmail.href = `mailto:${cfg.contact.email}`;
+  } else if (contactEmailItem) {
+    contactEmailItem.hidden = true;
+  }
 
   // Social links (Kontakt- und Footer-Bereich)
   function buildSocialLinks(container) {
@@ -225,7 +230,9 @@
   const footerContact = $("footer-contact");
   footerContact.appendChild(el("li", null, `<span class="icon" data-icon="mapPin"></span><span>${cfg.address.street}, ${cfg.address.zip} ${cfg.address.city}</span>`));
   footerContact.appendChild(el("li", null, `<span class="icon" data-icon="phone"></span><a href="tel:${cfg.contact.phone.replace(/\s+/g, "")}">${cfg.contact.phoneDisplay}</a>`));
-  footerContact.appendChild(el("li", null, `<span class="icon" data-icon="mail"></span><a href="mailto:${cfg.contact.email}">${cfg.contact.email}</a>`));
+  if (cfg.contact.email) {
+    footerContact.appendChild(el("li", null, `<span class="icon" data-icon="mail"></span><a href="mailto:${cfg.contact.email}">${cfg.contact.email}</a>`));
+  }
 
   // Impressum/Datenschutz
   if (cfg.legal) {
@@ -293,7 +300,16 @@
   // -------------------------------------------------------------------
   const form = $("contact-form");
   const formHint = $("form-hint");
-  if (form) {
+  if (form && !cfg.contact.email) {
+    // Keine E-Mail-Adresse hinterlegt -> Formular kann nicht per mailto:
+    // zugestellt werden. Stattdessen ausblenden und auf Anruf verweisen.
+    form.hidden = true;
+    const callHint = $("call-hint");
+    if (callHint) {
+      callHint.hidden = false;
+      $("call-hint-link").href = `tel:${cfg.contact.phone.replace(/\s+/g, "")}`;
+    }
+  } else if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const name = $("cf-name").value.trim();

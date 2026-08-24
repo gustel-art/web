@@ -19,37 +19,48 @@ window.SHOP_CONFIG = {
   // ---------------------------------------------------------------------
   // Grunddaten
   // ---------------------------------------------------------------------
-  shopName: "Zweirad Brenztal",
-  claim: "Ihr Fahrradladen in Heidenheim an der Brenz",
-  founded: 1994, // Gründungsjahr -> wird für "seit XXXX" genutzt
+  shopName: "Drahteselstall",
+  claim: "Der Fahrradladen in Heidenheim an der Brenz",
 
   // ---------------------------------------------------------------------
   // Adresse & Standort
   // ---------------------------------------------------------------------
   address: {
-    street: "Hauptstraße 24",
-    zip: "89522",
+    street: "Wilhelmstraße 118/1",
+    zip: "89518",
     city: "Heidenheim an der Brenz",
     region: "Baden-Württemberg",
     country: "Deutschland",
-    // Koordinaten für die Kartenanzeige (OpenStreetMap, kein API-Key nötig)
-    lat: 48.6763,
-    lng: 10.1526,
+    // Koordinaten grob geschätzt (Stadtzentrum Heidenheim) – für eine exakte
+    // Marker-Position: Adresse in Google Maps suchen, Rechtsklick auf den
+    // Punkt -> die dort angezeigten Koordinaten hier eintragen.
+    lat: 48.6785,
+    lng: 10.1502,
   },
 
   // ---------------------------------------------------------------------
   // Kontakt
   // ---------------------------------------------------------------------
   contact: {
-    phone: "+49 7321 12345",
-    phoneDisplay: "07321 12345",
-    whatsapp: "+4973211234567",
-    email: "info@zweirad-brenztal.de",
+    phone: "+49 171 1411117",
+    phoneDisplay: "0171 1411117",
+    // Keine öffentlich gelistete E-Mail-Adresse gefunden -> leer lassen,
+    // bis eine echte Adresse feststeht. Bei leerem Wert blendet die Seite
+    // den E-Mail-Kontaktweg automatisch aus.
+    email: "",
   },
 
   social: {
-    instagram: "https://instagram.com/",
-    facebook: "https://facebook.com/",
+    instagram: "",
+    facebook: "",
+  },
+
+  // ---------------------------------------------------------------------
+  // Google-Bewertung (laut Google-Eintrag: 4,6 ★ bei 11 Rezensionen)
+  // ---------------------------------------------------------------------
+  googleRating: {
+    value: "4,6",
+    count: 11,
   },
 
   // ---------------------------------------------------------------------
@@ -57,14 +68,16 @@ window.SHOP_CONFIG = {
   // day: 0 = Montag ... 6 = Sonntag
   // Für einen freien Tag: closed: true
   // Für Mittagspause: zwei Zeitfenster in "slots" angeben
+  //
+  // Laut Google-Eintrag: nur samstags von 8-20 Uhr geöffnet.
   // ---------------------------------------------------------------------
   openingHours: [
-    { day: 0, label: "Montag", slots: [["09:00", "13:00"], ["14:00", "18:00"]] },
-    { day: 1, label: "Dienstag", slots: [["09:00", "13:00"], ["14:00", "18:00"]] },
-    { day: 2, label: "Mittwoch", slots: [["09:00", "13:00"], ["14:00", "18:00"]] },
-    { day: 3, label: "Donnerstag", slots: [["09:00", "13:00"], ["14:00", "18:00"]] },
-    { day: 4, label: "Freitag", slots: [["09:00", "13:00"], ["14:00", "18:00"]] },
-    { day: 5, label: "Samstag", slots: [["09:00", "13:00"]] },
+    { day: 0, label: "Montag", slots: [], closed: true },
+    { day: 1, label: "Dienstag", slots: [], closed: true },
+    { day: 2, label: "Mittwoch", slots: [], closed: true },
+    { day: 3, label: "Donnerstag", slots: [], closed: true },
+    { day: 4, label: "Freitag", slots: [], closed: true },
+    { day: 5, label: "Samstag", slots: [["08:00", "20:00"]] },
     { day: 6, label: "Sonntag", slots: [], closed: true },
   ],
 
@@ -74,13 +87,13 @@ window.SHOP_CONFIG = {
   hero: {
     title: "Radfahren beginnt bei uns.",
     subtitle:
-      "Verkauf, Reparatur und E-Bike-Service für Heidenheim und das Brenztal – persönliche Beratung von Ihrem Meisterbetrieb vor Ort.",
-    primaryCta: { label: "Termin vereinbaren", href: "#kontakt" },
+      "Ihr Fahrradladen in Heidenheim an der Brenz – persönliche Beratung, Verkauf und Service vor Ort.",
+    primaryCta: { label: "Kontakt aufnehmen", href: "#kontakt" },
     secondaryCta: { label: "Leistungen ansehen", href: "#leistungen" },
     badges: [
-      { icon: "badge", text: "Meisterbetrieb seit 1994" },
-      { icon: "clock", text: "Werkstatt oft am selben Tag" },
-      { icon: "mapPin", text: "Mitten in Heidenheim" },
+      { icon: "star", text: "4,6 ★ bei Google (11 Rezensionen)" },
+      { icon: "clock", text: "Geöffnet Samstag 8–20 Uhr" },
+      { icon: "mapPin", text: "Wilhelmstraße, Heidenheim" },
     ],
   },
 
@@ -89,60 +102,59 @@ window.SHOP_CONFIG = {
   // ---------------------------------------------------------------------
   usps: [
     {
-      icon: "wrench",
-      title: "Meisterwerkstatt",
-      text: "Fachgerechte Reparatur durch geprüfte Zweiradmechaniker.",
+      icon: "bike",
+      title: "Große Auswahl",
+      text: "Vom Kinderrad bis zum E-Bike – viele hochwertige Gebrauchträder für jede Altersklasse.",
     },
     {
-      icon: "clock",
-      title: "Schneller Service",
-      text: "Standardreparaturen häufig noch am selben Tag erledigt.",
+      icon: "heart",
+      title: "Ehrliche Beratung",
+      text: "Freundlich und ehrlich, ohne Verkaufsdruck – das bestätigen zahlreiche Kund:innen.",
     },
     {
       icon: "tag",
       title: "Faire Preise",
-      text: "Transparente Kostenvoranschläge – keine versteckten Kosten.",
+      text: "Gutes Preis-Leistungs-Verhältnis bei Neu- und Gebrauchträdern.",
     },
     {
-      icon: "heart",
-      title: "Lokal verwurzelt",
-      text: "Seit 1994 verlässlicher Fahrradpartner im Brenztal.",
+      icon: "clock",
+      title: "Nur samstags geöffnet",
+      text: "8–20 Uhr in der Wilhelmstraße – bitte Öffnungszeiten beachten.",
     },
   ],
 
   // ---------------------------------------------------------------------
   // Leistungen (werden automatisch als Karten dargestellt)
+  // Die ersten beiden Karten spiegeln wieder, was Kund:innen in Google-
+  // Rezensionen tatsächlich hervorheben (große Auswahl, Gebrauchträder,
+  // faire Beratung). Reparatur & Zubehör sind typische Ergänzungen eines
+  // Fahrradladens als Ausgangspunkt – bitte bei Bedarf anpassen.
   // ---------------------------------------------------------------------
   services: [
     {
       icon: "bike",
-      title: "Fahrradverkauf",
-      text: "Trekking-, Stadt-, Renn-, Kinder- und Lastenräder namhafter Marken – inklusive persönlicher Beratung und Probefahrt.",
+      title: "Neu- & Gebrauchträder",
+      text: "Große Auswahl für jede Altersklasse – vom Kinderrad über Stadt- und Rennräder bis zum E-Bike. Viele hochwertige Gebrauchträder zu fairen Preisen.",
     },
     {
       icon: "battery",
-      title: "E-Bike Center",
-      text: "Beratung, Verkauf und Service rund ums E-Bike: Akku-Diagnose, Software-Updates und Motor-Check.",
+      title: "E-Bikes",
+      text: "Beratung und Verkauf rund ums E-Bike aus unserem Sortiment.",
+    },
+    {
+      icon: "heart",
+      title: "Ehrliche Beratung",
+      text: "Freundliche, ehrliche Beratung – ohne Verkaufsdruck, bis Sie das passende Rad gefunden haben.",
     },
     {
       icon: "wrench",
-      title: "Reparatur & Inspektion",
-      text: "Bremsen, Schaltung, Reifen, Laufräder – wir bringen Ihr Rad wieder sicher auf die Straße.",
-    },
-    {
-      icon: "shield",
-      title: "Diebstahlschutz & Codierung",
-      text: "Rahmencodierung und Beratung zu Schlössern, damit Ihr Rad da bleibt, wo es hingehört.",
+      title: "Reparatur & Service",
+      text: "Bremsen, Schaltung, Reifen und mehr – wir bringen Ihr Rad wieder sicher auf die Straße.",
     },
     {
       icon: "bag",
       title: "Zubehör & Ausstattung",
-      text: "Helme, Beleuchtung, Taschen, Kindersitze und Bekleidung – alles für sicheres und komfortables Radfahren.",
-    },
-    {
-      icon: "ruler",
-      title: "Bike-Fitting",
-      text: "Individuelle Anpassung von Sitzposition und Rahmengröße für entspanntes, effizientes Fahren.",
+      text: "Helme, Beleuchtung, Taschen und Kindersitze für sicheres und komfortables Radfahren.",
     },
   ],
 
@@ -152,40 +164,47 @@ window.SHOP_CONFIG = {
   about: {
     title: "Ihr Fahrradladen mitten in Heidenheim",
     text:
-      "Seit 1994 dreht sich bei uns alles ums Fahrrad. Als familiengeführter Meisterbetrieb kennen wir die Strecken im Brenztal und auf der Ostalb genauso gut wie die Technik in Ihrem Rad. Ob neues Wunschrad, dringende Reparatur oder Umstieg aufs E-Bike – wir beraten ehrlich, reparieren zuverlässig und sind auch nach dem Kauf für Sie da.",
+      "Der Drahteselstall ist Ihr Fahrradladen in der Wilhelmstraße in Heidenheim an der Brenz. Kund:innen schätzen die große Auswahl – vom Kinderrad bis zum E-Bike, viele davon hochwertig gebraucht und fair bepreist – sowie die freundliche, ehrliche Beratung ohne Verkaufsdruck. Wir sind samstags von 8 bis 20 Uhr für Sie da.",
     stats: [
-      { value: "30+", label: "Jahre Erfahrung" },
-      { value: "12.000+", label: "reparierte Räder" },
-      { value: "4.9/5", label: "Kundenbewertung" },
+      { value: "4,6 ★", label: "Google-Bewertung" },
+      { value: "11", label: "Rezensionen" },
     ],
   },
 
   // ---------------------------------------------------------------------
   // Team (optional – leeres Array blendet den Abschnitt aus)
+  // Herr Ziller wird in einer Google-Rezension als freundlicher Ansprech-
+  // partner genannt. Rolle ist nicht offiziell bestätigt (vermutlich
+  // Inhaber) – bitte bei Bedarf korrigieren oder weitere Personen ergänzen.
   // ---------------------------------------------------------------------
   team: [
-    { name: "Markus Weller", role: "Inhaber & Zweiradmechanikermeister", initials: "MW" },
-    { name: "Sabine Kaiser", role: "Verkauf & Beratung", initials: "SK" },
-    { name: "Tobias Herrmann", role: "E-Bike Service", initials: "TH" },
+    { name: "Herr Ziller", role: "Beratung & Verkauf", initials: "HZ" },
   ],
 
   // ---------------------------------------------------------------------
-  // Kundenstimmen (optional – leeres Array blendet den Abschnitt aus)
+  // Kundenstimmen – ausgewählte, unbearbeitete Original-Zitate aus echten
+  // Google-Rezensionen des Drahteselstall (mit Vorname/Anzeigename, wie bei
+  // Google öffentlich einsehbar). Weitere Rezensionen: siehe Google-Eintrag.
   // ---------------------------------------------------------------------
   testimonials: [
     {
-      text: "Schnelle, ehrliche Beratung und meine Reparatur war noch am selben Tag fertig. Besser geht's nicht.",
-      author: "Julia S.",
+      text: "Große Auswahl an Fahrrädern für jede Altersklasse. Freundliche und ehrliche Beratung. Habe gefunden, was ich wollte und bin sehr glücklich mit meinem Fahrrad. Vielen Dank!",
+      author: "Lukas",
       rating: 5,
     },
     {
-      text: "Endlich ein Laden, der sich mit E-Bikes wirklich auskennt. Top Service, faire Preise.",
-      author: "Andreas R.",
+      text: "Sehr viele gebrauchte Räder in top Zustand zu wirklich fairen Preisen. Jede Art von Rad über eBikes, Rennräder, Stadträder zu Kinderräder.",
+      author: "Kathi Schim",
       rating: 5,
     },
     {
-      text: "Seit Jahren mein Fahrradladen in Heidenheim – immer freundlich und kompetent.",
-      author: "Familie Bauer",
+      text: "Haben gerade ein Rad gekauft, klasse Beratung, freundlich und super Preis-Leistung.",
+      author: "Rana Abduljalil",
+      rating: 5,
+    },
+    {
+      text: "Habe mir ein schönes gebrauchtes Fahrrad zum fairen Preis gekauft. Super Betreuung und gute Auswahl :)",
+      author: "Nihâl Yldrm",
       rating: 5,
     },
   ],
